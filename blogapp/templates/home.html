@@ -1,0 +1,16 @@
+<h1>여기는 home 페이지 입니다</h1>
+
+{% for chaewon in chaewons.all %}
+<div class="container">
+    <a href="{% url 'detail' chaewon.id %}">
+    <h1>{{chaewon.title}}</h1>
+    </a>
+    <p>{{chaewon.pub_date}}</p>
+    <p>{{chaewon.body}}</p>
+</div>
+<a href = "{% url 'delete' chaewon.id%}">삭제하기 </a>
+<br>
+<a href = "{% url 'update' chaewon.id%}">수정하기 </a>
+{%endfor%}
+<a href="{% url 'new' %}"> new post </a>
+
